@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<OnlineStore.Models.HomeCard>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -9,22 +11,17 @@
 
 <div class="row mt-4">
 
-    <div class="col-md-4">
-        <div class="card mb-4">
-            <h5 class="card-body text-center">New Arrivals</h5>
-            <p class="card-text">Check out our latest products.</p>
-            <a asp-controller="Home" asp-action="Products" class="btn btn-primary">
-                View Products
-            </a>
+    @foreach(var card in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <h5 class="card-body text-center">@card.Title</h5>
+                <p class="card-text">@card.Description</p>
+                <a asp-controller="@card.ControllerName" asp-action="@card.ActionName" class="btn btn-primary">
+                    @card.ButtonText
+                </a>
+            </div>
         </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card mb-4">
-            <h5 class="card-body text-center">Special Offers</h5>
-            <p class="card-text">Explore our current deals and discounts.</p>
-            <a href="#" class="btn btn-primary">View Offers</a>
-        </div>
-    </div>
+    }
 
 </div>
