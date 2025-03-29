@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to our Online Store</h1>
+    <p>Find amazing products at great prices!</p>
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <h5 class="card-body text-center">New Arrivals</h5>
+            <p class="card-text">Check out our latest products.</p>
+            <a asp-controller="Home" asp-action="Products" class="btn btn-primary">
+                View Products
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <h5 class="card-body text-center">Special Offers</h5>
+            <p class="card-text">Explore our current deals and discounts.</p>
+            <a href="#" class="btn btn-primary">View Offers</a>
+        </div>
+    </div>
+
+</div>
